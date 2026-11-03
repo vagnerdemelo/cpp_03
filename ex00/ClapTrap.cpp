@@ -18,3 +18,13 @@ void ClapTrap::attack(const std::string &target)
 {
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" <<'\n';
 }
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "ClapTrap " << this->_name << " toke " << amount << " points of damage!" <<'\n';
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "ClapTrap " << this->_name << " repaired " << amount << " points of hit!" <<'\n';
+}
