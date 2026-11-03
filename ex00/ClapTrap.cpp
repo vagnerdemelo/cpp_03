@@ -13,3 +13,8 @@ ClapTrap::~ClapTrap()
 {
 	std::cout << "Destructor called" << '\n';
 }
+
+void ClapTrap::attack(const std::string &target)
+{
+	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" <<'\n';
+}
