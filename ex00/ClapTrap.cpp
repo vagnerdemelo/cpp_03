@@ -8,3 +8,8 @@ ClapTrap::ClapTrap(std::string name)
 	this->_attackDamage = 0;
 	std::cout << "Default constructor called" << '\n';
 }
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "Destructor called" << '\n';
+}
