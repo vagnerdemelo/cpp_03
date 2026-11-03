@@ -1,12 +1,47 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	std::cout << "Default constructor called" << '\n';
+
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "Copy constructor called" << '\n';
+
+	this->_name = other._name;
+	this->_hitPoints = other._hitPoints;
+	this->_energyPoints = other._energyPoints;
+	this->_attackDamage = other._attackDamage;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	std::cout << "Copy assignment operator called" << '\n';
+
+	if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoints = other._hitPoints;
+		this->_energyPoints = other._energyPoints;
+		this->_attackDamage = other._attackDamage;
+	}
+
+	return *this;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
+	std::cout << "String constructor called" << '\n';
+
 	this->_name = name;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
-	std::cout << "Default constructor called" << '\n';
 }
 
 ClapTrap::~ClapTrap()

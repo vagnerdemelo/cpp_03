@@ -12,6 +12,9 @@ private:
 	int _energyPoints;
 	int _attackDamage;
 public:
+	ClapTrap();
+	ClapTrap(const ClapTrap& other);
+	ClapTrap& operator=(const ClapTrap& other);
 	ClapTrap(std::string name);
 	~ClapTrap();
 
