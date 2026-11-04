@@ -1,13 +1,15 @@
-NAME := ClapTrap
+NAME := ScavTrap
 
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-HEADERS :=	ClapTrap.hpp
+HEADERS :=	ClapTrap.hpp \
+			ScavTrap.hpp
 
 OBJS_FOLDER := objs/
 SRCS := main.cpp \
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 # OBJS := $(SRCS:.cpp=.o)
 OBJS := $(patsubst %.cpp, $(OBJS_FOLDER)%.o,$(SRCS))
