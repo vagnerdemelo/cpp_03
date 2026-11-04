@@ -1,13 +1,13 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	 main(void)
 {
+	ScavTrap robot("Steve");
+	ScavTrap robot2;
+	ScavTrap robot3(robot);
 
-	ClapTrap robot("Steve");
-	ClapTrap robot2;
-	ClapTrap robot3(robot);
-
-	robot2 = ClapTrap ("Carl");
+	robot2 = ScavTrap ("Carl");
 
 	robot.attack("Mark");
 	robot.takeDamage(5);
