@@ -1,7 +1,7 @@
 NAME := ClapTrap
 
 CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXXFragS := -Wall -Wextra -Werror -std=c++98
 
 HEADERS :=	ClapTrap.hpp
 
@@ -17,13 +17,13 @@ OBJS := $(patsubst %.cpp, $(OBJS_FOLDER)%.o,$(SRCS))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $@
+	$(CXX) $(CXXFragS) $(OBJS) -o $@
 
 $(OBJS_FOLDER):
 	mkdir -p $(OBJS_FOLDER)
 
 $(OBJS_FOLDER)%.o: %.cpp | $(OBJS_FOLDER)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFragS) -c $< -o $@
 
 $(OBJS): $(HEADERS)
 

@@ -1,13 +1,13 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	 main(void)
 {
 	ScavTrap robot("Steve");
-	ScavTrap robot2;
-	ScavTrap robot3(robot);
+	FragTrap robot2;
 
-	robot2 = ScavTrap ("Carl");
+	robot2 = FragTrap ("Carl");
 
 	robot.attack("Mark");
 	robot.takeDamage(5);
@@ -23,13 +23,8 @@ int	 main(void)
 	robot2.takeDamage(10);
 	robot2.attack("John");
 	robot2.beRepaired(2);
+	robot2.highFivesGuys();
 
-	robot3.attack("Mark");
-	robot3.takeDamage(5);
-	robot3.beRepaired(2);
-	robot3.takeDamage(10);
-	robot3.attack("John");
-	robot3.beRepaired(2);
 
 	return (0);
 }
