@@ -15,6 +15,7 @@ int	 main(void)
 	robot.takeDamage(10);
 	robot.attack("John");
 	robot.beRepaired(2);
+	robot.guardGate();
 
 	robot2.attack("Mark");
 	robot2.takeDamage(5);
