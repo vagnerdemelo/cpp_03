@@ -2,30 +2,60 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
+#include <iostream>
 
-int	 main(void)
+int main(void)
 {
-	ScavTrap robot("Steve");
-	FragTrap robot2;
+    std::cout << "\n=== TEST 1: PARAMETERIZED CONSTRUCTOR ===\n";
+    DiamondTrap robot("Mark");
+    robot.whoAmI();
 
-	robot2 = FragTrap ("Carl");
+    std::cout << "\n=== TEST 2: DEFAULT CONSTRUCTOR ===\n";
+    DiamondTrap robot2;
 
-	robot.attack("Mark");
-	robot.takeDamage(5);
-	robot.beRepaired(2);
-	robot.takeDamage(10);
-	robot.attack("John");
-	robot.beRepaired(2);
-	robot.guardGate();
+    std::cout << "\n=== TEST 3: COPY CONSTRUCTOR ===\n";
+    DiamondTrap robot3(robot);
+    robot3.whoAmI();
 
-	robot2.attack("Mark");
-	robot2.takeDamage(5);
-	robot2.beRepaired(2);
-	robot2.takeDamage(10);
-	robot2.attack("John");
-	robot2.beRepaired(2);
-	robot2.highFivesGuys();
+    std::cout << "\n=== TEST 4: COPY ASSIGNMENT ===\n";
+    robot2 = robot;
+    robot2.whoAmI();
 
+    std::cout << "\n=== TEST 5: SELF ASSIGNMENT ===\n";
+    DiamondTrap &ref = robot;
+    robot = ref;
+    robot.whoAmI();
 
-	return (0);
+    std::cout << "\n=== TEST 6: ATTACK ===\n";
+    robot.attack("Enemy");
+
+    std::cout << "\n=== TEST 7: TAKE DAMAGE ===\n";
+    robot.takeDamage(40);
+
+    std::cout << "\n=== TEST 8: REPAIR ===\n";
+    robot.beRepaired(20);
+
+    std::cout << "\n=== TEST 9: SCAVTRAP SPECIAL ABILITY ===\n";
+    robot.guardGate();
+
+    std::cout << "\n=== TEST 10: FRAGTRAP SPECIAL ABILITY ===\n";
+    robot.highFivesGuys();
+
+    std::cout << "\n=== TEST 11: ZERO HIT POINTS ===\n";
+    robot.takeDamage(200);
+    robot.attack("Enemy");
+    robot.beRepaired(10);
+
+    std::cout << "\n=== TEST 12: ENERGY EXHAUSTION ===\n";
+    DiamondTrap robot4("EnergyTest");
+
+    for (int i = 0; i < 51; i++)
+        robot4.ScavTrap::attack("Enemy");
+
+    std::cout << "\n=== TEST 13: INDEPENDENT COPY ===\n";
+    robot3.whoAmI();
+    robot3.ScavTrap::attack("Enemy");
+
+    std::cout << "\n=== TEST 14: DESTRUCTOR ORDER ===\n";
+    return (0);
 }

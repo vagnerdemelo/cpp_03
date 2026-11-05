@@ -18,6 +18,7 @@ public:
 	~DiamondTrap();
 
 	void whoAmI();
+	using ScavTrap::attack;
 };
 
 #endif
