@@ -12,26 +12,11 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap: Copy constructor called" << '\n';
-
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "ScavTrap: Copy assignment operator called" << '\n';
-
-	if (this != &other)
-	{
-		this->_name = other._name;
-		this->_hitPoints = other._hitPoints;
-		this->_energyPoints = other._energyPoints;
-		this->_attackDamage = other._attackDamage;
-	}
-
-	return *this;
 }
 
 ScavTrap::ScavTrap(std::string name)
