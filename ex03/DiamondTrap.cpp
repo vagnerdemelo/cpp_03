@@ -16,7 +16,11 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), ScavTrap(o
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
-	
+	 if (this != &other)
+	 {
+		this->_name = other._name;
+		ClapTrap::operator=(other);
+	 }
 	return *this;
 }
 
